@@ -4,7 +4,9 @@ jobs:
   main:
     runs-on: ubuntu-slim
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/upload-artifact@v7
+        with:
+          path: notes.pdf
       - run: sudo apt-get update
       - run: sudo apt install texlive-latex-base
       - run: pdflatex notes.tex
