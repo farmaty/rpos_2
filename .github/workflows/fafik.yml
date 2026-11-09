@@ -2,7 +2,7 @@ name: fafik
 on: push
 jobs:
   main:
-    runs-on: ubuntuslim
+    runs-on: ubunt-uslim
     steps:
       - uses: actions/checkout@v7
       - run: sudo apt-get update
