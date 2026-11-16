@@ -2,7 +2,7 @@ name: fafik
 on: push
 jobs:
   main:
-    runs-on: ubuntu-slim
+    runs-on: ubunt-slim
     steps:
       - uses: actions/upload-artifact@v7
         with:
