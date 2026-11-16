@@ -1,12 +1,24 @@
 name: fafik
+
 on: push
+
 jobs:
   main:
     runs-on: ubuntu-slim
+
     steps:
-      - uses: actions/upload-artifact@v7
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base
+
+      - name: Compile PDF
+        run: pdflatex notes.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
         with:
+          name: notes-pdf
           path: notes.pdf
-      - run: sudo apt-get update
-      - run: sudo apt install texlive-latex-base
-      - run: pdflatex notes.tex
